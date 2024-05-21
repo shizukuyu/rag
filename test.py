@@ -13,18 +13,19 @@ from langchain.chains import RetrievalQA
 
 
 # get the md text
-md_text = pdf4llm.to_markdown("test2.pdf")  
+md_text = pdf4llm.to_markdown("nvidia.pdf")  
 
-# check for the md text
-# output_file = "test.md"
+# # check for the md text
+# output_file = "testn.md"
 # with open(output_file, "w", encoding="utf-8") as f:
 #     f.write(md_text)
 
-# print(output_file is saved)
+# print('output_file is saved')
 
 # split the md into chunks
 splitter = MarkdownTextSplitter(chunk_size=40, chunk_overlap=0)
 splitter.create_documents([md_text])
+
 
 # load embbeding model
 # supplying a persist_directory will store the embeddings on disk
